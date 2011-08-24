@@ -177,8 +177,7 @@
 - (void)dealloc
 {
 	[displayLink invalidate];
-		
-	[displayLink release];
+	
 	[arcLayer release];
 	[spriteImage release];
 	
