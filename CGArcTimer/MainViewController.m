@@ -53,7 +53,7 @@
 	}
 	else
 	{
-		spriteImage = [sourceImage copy];
+		spriteImage = [sourceImage retain];
 	}
 	
 	[self performSelector:@selector(reset)];
