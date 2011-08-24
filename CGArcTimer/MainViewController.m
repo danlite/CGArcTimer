@@ -19,6 +19,10 @@
 	UIImage *sourceImage = [UIImage imageNamed:@"sprite"];
 	if (sourceImage.scale != [[UIScreen mainScreen] scale])
 	{
+		// To preserve the pixel-y quality of the sprite on the Retina display, we need to
+		// create our own high-res version, otherwise Core Graphics scales the original
+		// sprite without using the nearest neighbour method
+		
 		CGFloat factor = [[UIScreen mainScreen] scale] / sourceImage.scale;
 		CGImageRef imageRef = sourceImage.CGImage;
 		
